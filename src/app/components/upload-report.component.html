@@ -1,0 +1,7 @@
+<div class="upload-container">
+  <h2>Upload Your Medical Report</h2>
+  <input type="file" (change)="onFileSelected($event)" />
+  <p *ngIf="fileName">Selected: {{ fileName }}</p>
+  <button (click)="uploadReport()" [disabled]="!selectedFile">Upload</button>
+  <p *ngIf="uploadMessage">{{ uploadMessage }}</p>
+</div>

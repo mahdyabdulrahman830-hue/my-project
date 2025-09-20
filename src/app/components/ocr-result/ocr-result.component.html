@@ -1,0 +1,9 @@
+
+
+<div class="ocr-container">
+  <h3>OCR Extracted Text</h3>
+  <pre *ngIf="ocrText; else noText">{{ ocrText }}</pre>
+  <ng-template #noText>
+    <p style="color: gray;">No OCR text available. Please upload a report.</p>
+  </ng-template>
+</div>

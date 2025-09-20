@@ -1,0 +1,28 @@
+
+
+<div class="reports-container">
+  <h3>Uploaded Reports</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Filename</th>
+        <th>MIME Type</th>
+        <th>Size (KB)</th>
+        <th>Uploaded At</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let report of reports">
+        <td>{{ report.originalName }}</td>
+        <td>{{ report.mimetype }}</td>
+        <td>{{ (report.size / 1024).toFixed(2) }}</td>
+        <td>{{ report.createdAt | date:'short' }}</td>
+        <td>
+          <a [href]="'http://localhost:5000/uploads/' + report.filename" target="_blank">View</a> |
+          <a [href]="'http://localhost:5000/uploads/' + report.filename" download>Download</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
